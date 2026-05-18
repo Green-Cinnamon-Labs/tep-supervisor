@@ -66,6 +66,15 @@ for f in operator-deployment.yaml plcmachine-sample.yaml; do
     fi
 done
 
+# A imagem plc-operator:latest foi carregada no Kind, mas pods existentes
+# não são recriados automaticamente. Reinicia apenas o Deployment do operator
+# para garantir que o novo pod use a imagem recém-carregada.
+kubectl rollout restart deployment/plc-operator
+
+# Aguarda o rollout terminar. Se o operator entrar em CrashLoop ou não ficar
+# pronto dentro do timeout, o setup falha aqui e o problema fica visível.
+kubectl rollout status deployment/plc-operator --timeout=60s
+
 echo ""
 echo "=== Setup concluído ==="
 echo ""
