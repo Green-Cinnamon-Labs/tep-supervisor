@@ -1,37 +1,37 @@
 # Lab K8s Supervisor
 
-Repositório de infraestrutura para o projeto **Tennessee Eastman Digital Twin Lab**.
-Contém configurações de cluster, manifests de deploy e scripts de setup para rodar a planta TEP + operator supervisório em diferentes ambientes.
+Infrastructure repository for the **Tennessee Eastman Digital Twin Lab** project.
+Contains cluster configurations, deployment manifests, and setup scripts for running the TEP plant + supervisory operator across different environments.
 
-## Ambientes
+## Environments
 
-| Diretório | Ambiente | Status |
+| Directory | Environment | Status |
 |-----------|----------|--------|
-| [`local/`](local/) | **Kind** (cluster local, sem cloud) | ativo |
-| [`k8s-lab-1-aws/`](k8s-lab-1-aws/) | AWS (EC2 + Terraform) | legado |
+| [`local/`](local/) | **Kind** (local cluster, no cloud) | active |
+| [`k8s-lab-1-aws/`](k8s-lab-1-aws/) | AWS (EC2 + Terraform) | legacy |
 | [`k8s-lab-1-azr/`](k8s-lab-1-azr/) | Azure | placeholder |
 | [`k8s-lab-1-gcp/`](k8s-lab-1-gcp/) | GCP | placeholder |
 
-## Lab Local (Kind)
+## Local Lab (Kind)
 
-O ambiente principal de desenvolvimento. Roda tudo no seu PC com Docker + Kind.
+The main development environment. Runs everything on your machine with Docker + Kind.
 
-**Pré-requisitos:** Docker, Kind (v0.27+), kubectl.
+**Prerequisites:** Docker, Kind (v0.27+), kubectl.
 
 ```bash
 cd local/
 bash setup.sh
 ```
 
-Detalhes completos em [`local/README.md`](local/README.md).
+Full details in [`local/README.md`](local/README.md).
 
-## Repositórios relacionados
+## Related repositories
 
-| Repo | Descrição |
+| Repo | Description |
 |------|-----------|
-| [tep-plant](https://github.com/Green-Cinnamon-Labs/tep-plant) | Planta TEP (simulação Rust + gRPC) |
-| [tep-operator](https://github.com/Green-Cinnamon-Labs/tep-operator) | Operator supervisório (Go + controller-runtime) |
+| [tep-plant](https://github.com/Green-Cinnamon-Labs/tep-plant) | TEP plant (Rust simulation + gRPC) |
+| [tep-operator](https://github.com/Green-Cinnamon-Labs/tep-operator) | Supervisory operator (Go + controller-runtime) |
 
-## Nota
+## Note
 
-> O `.gitignore` ignora credenciais, chaves SSH, e artefatos do Terraform. É normal que esses arquivos não apareçam no repositório remoto.
+> `.gitignore` ignores credentials, SSH keys, and Terraform artifacts. It's normal for these files not to appear in the remote repository.
