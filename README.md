@@ -1,6 +1,6 @@
 # Lab K8s Supervisor
 
-Infrastructure repository for the **Tennessee Eastman Digital Twin Lab** project.
+Infrastructure repository for the **Tennessee Eastman CPS Lab** project.
 Contains cluster configurations, deployment manifests, and setup scripts for running the TEP plant + supervisory operator across different environments.
 
 ## Environments
